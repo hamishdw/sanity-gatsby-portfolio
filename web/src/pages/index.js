@@ -19,7 +19,6 @@ export const query = graphql`
       keywords
     }
     projects: allSanitySampleProject(
-      limit: 6
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {
@@ -60,7 +59,7 @@ export const query = graphql`
 `
 
 const IndexPage = props => {
-  const {data, errors} = props
+  const {data, errors} = props;
 
   if (errors) {
     return (
